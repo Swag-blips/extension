@@ -3,11 +3,14 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import { BrowserRouter as Router } from "react-router-dom";
 import AppRoutes from "./AppRoutes";
+import Auth0providerWithNavigate from "./auth/Auth0providerWithNavigate";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <Router>
-      <AppRoutes />
+      <Auth0providerWithNavigate>
+        <AppRoutes />
+      </Auth0providerWithNavigate>
     </Router>
   </StrictMode>
 );

@@ -9,10 +9,12 @@ import {
 import { Menu } from "lucide-react";
 import { Separator } from "./ui/separator";
 import { Button } from "./ui/button";
+import { useAuth0 } from "@auth0/auth0-react";
 
 type Props = {};
 
 export default function MobileNav({}: Props) {
+  const { isAuthenticated, loginWithRedirect, user } = useAuth0();
   return (
     <Sheet>
       <SheetTrigger>
@@ -20,7 +22,7 @@ export default function MobileNav({}: Props) {
       </SheetTrigger>
       <SheetContent className="space-y-3">
         <SheetTitle>
-          <span>Welcome to MernEats.com</span>
+          <span>Welcome to MernEats.com!</span>
         </SheetTitle>
         <Separator />
         <SheetDescription className="flex ">
