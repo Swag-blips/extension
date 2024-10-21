@@ -1,11 +1,19 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import path from "path";
-import Layout from "./layouts/layout";
+import Layout from "./layouts/Layout";
+import HomePage from "./pages/HomePage";
 
 const AppRoutes = () => {
   return (
     <Routes>
-      <Route path="/" element={<Layout>HomePage</Layout>} />
+      <Route
+        path="/"
+        element={
+          <Layout>
+            <HomePage />
+          </Layout>
+        }
+      />
       <Route path="/user-profile" element={<span>User Profile</span>} />
       <Route path="*" element={<Navigate to="/" />} />
     </Routes>
