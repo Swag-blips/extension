@@ -1,15 +1,15 @@
 {
-  "manifest_version": 3,
   "name": "Background Color Changer",
   "version": "1.2",
   "description": "Changes the background color of the current tab via context menu",
-  "permissions": ["activeTab", "storage", "contextMenus", "tabs"],
+  "permissions": ["activeTab", "storage", "contextMenus"],
   "action": {
     "default_popup": "popup.html"
   },
   "background": {
-    "service-worker": "background.js"
+    "service_worker": "sample.js"
   },
+  "manifest_version": 3,
   "content_scripts": [
     {
       "matches": ["<all_urls>"],

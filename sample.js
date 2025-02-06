@@ -1,15 +1,10 @@
 chrome.runtime.onInstalled.addListener(() => {
   chrome.contextMenus.create({
     id: "changeBackgroundColor",
+    type: "normal",
     title: "Change Background Color",
-    contexts: ["page"],
+    contexts: ["all"],
   });
-});
-
-chrome.contextMenus.create({
-  id: "testMenuItem",
-  title: "Test Menu Item",
-  contexts: ["page"],
 });
 
 chrome.contextMenus.onClicked.addListener((info, tab) => {
@@ -22,5 +17,3 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
     });
   }
 });
-
-
