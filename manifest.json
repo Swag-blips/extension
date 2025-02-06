@@ -3,7 +3,7 @@
   "name": "Background Color Changer",
   "version": "1.2",
   "description": "Changes the background color of the current tab via context menu",
-  "permissions": ["activeTab", "storage", "contextMenus"],
+  "permissions": ["activeTab", "storage", "contextMenus", "tabs"],
   "action": {
     "default_popup": "popup.html"
   },
