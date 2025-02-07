@@ -1,0 +1,24 @@
+{
+  "name": "Ai assistant",
+  "version": "3",
+  "description": "Ai in your daily life",
+  "permissions": ["activeTab", "storage", "contextMenus", "tabs", "scripting"],
+  "action": {
+    "default_popup": "popup/index.html"
+  },
+  "background": {
+    "service_worker": "background/index.js"
+  },
+  "manifest_version": 3,
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": [
+        "lib/marked.min.js",
+        "content/promptUi.js",
+        "content/prompthandler.js",
+        "content/index.js"
+      ]
+    }
+  ]
+}
