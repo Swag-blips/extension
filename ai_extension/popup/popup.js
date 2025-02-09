@@ -4,27 +4,6 @@ const GEMINI_ENDPOINT =
   "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-exp:generateContent";
 const GROK_ENDPOINT = "https://api.x.ai/v1/chat/completions";
 
-// Load the stored theme preference
-chrome.storage.local.get("darkMode", (data) => {
-  if (data.darkMode) {
-    document.documentElement.classList.add("dark");
-    toggleModeBtn.querySelector("span").innerHTML = "&#9728;";
-  } else {
-    document.documentElement.classList.remove("dark");
-    toggleModeBtn.querySelector("span").innerHTML = "&#9790;";
-  }
-});
-
-const toggleModeBtn = document.getElementById("toggleMode");
-toggleModeBtn.addEventListener("click", () => {
-  const darkModeEnabled = document.documentElement.classList.toggle("dark");
-  const toggleSpan = toggleModeBtn.querySelector("span");
-
-  // Change icon to corresponding mode
-  toggleSpan.innerHTML = darkModeEnabled ? "&#9728;" : "&#9790;";
-  chrome.storage.local.set({ darkMode: darkModeEnabled });
-});
-
 document.getElementById("saveButton").addEventListener("click", () => {
   const gptKey = document.getElementById("gptKey").value;
   const geminiKey = document.getElementById("geminiKey").value;
