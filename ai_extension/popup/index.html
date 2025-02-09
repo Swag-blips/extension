@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AI Config</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        border: none;
+        border-radius: 20px;
+        width: 600px;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 dark:bg-gray-800">
+    <div
+      class="container mx-auto p-6 bg-white dark:bg-gray-900 rounded-lg shadow-lg max-w-xl"
+    >
+      <!-- Header -->
+      <div class="mb-8">
+        <div class="flex items-center gap-6">
+          <h2
+            class="mb-2 text-3xl font-extrabold text-gray-900 dark:text-white"
+          >
+            <span
+              class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400"
+              >AI Assistant
+            </span>
+            Configuration
+          </h2>
+          <button
+            id="toggleMode"
+            class="border border-gray-300 rounded-lg px-3 mb-1 dark:text-white"
+          >
+            <span class="text-xl"></span>
+          </button>
+        </div>
+        <p class="text-base font-normal text-gray-500">
+          Configure your ChatGPT, Gemini, and Grok endpoints and keys, then
+          select any tool you want
+        </p>
+      </div>
+
+      <!-- Form Elements -->
+      <div>
+        <!-- Chat GPT -->
+        <div class="w-full flex gap-4">
+          <div class="mb-4 w-1/2">
+            <label
+              for="gptEndpoint"
+              class="block text-sm font-medium text-gray-700 dark:text-white"
+              >GPT Endpoint</label
+            >
+            <input
+              type="text"
+              id="gptEndpoint"
+              class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:text-white"
+              placeholder="Enter GPT Endpoint"
+            />
+          </div>
+
+          <div class="mb-4 w-1/2">
+            <label
+              for="gptKey"
+              class="block text-sm font-medium text-gray-700 dark:text-white"
+              >GPT API Key</label
+            >
+            <input
+              type="password"
+              id="gptKey"
+              class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:text-white"
+              placeholder="Enter GPT API Key"
+            />
+          </div>
+        </div>
+
+        <!-- Gemini -->
+        <div class="w-full flex gap-4">
+          <div class="mb-4 w-1/2">
+            <label
+              for="geminiEndpoint"
+              class="block text-sm font-medium text-gray-700 dark:text-white"
+              >Gemini Endpoint</label
+            >
+            <input
+              type="text"
+              id="geminiEndpoint"
+              class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:text-white"
+              placeholder="Enter Gemini Endpoint"
+            />
+          </div>
+
+          <div class="mb-4 w-1/2">
+            <label
+              for="geminiKey"
+              class="block text-sm font-medium text-gray-700 dark:text-white"
+              >Gemini API Key</label
+            >
+
+            <input
+              type="password"
+              id="geminiKey"
+              class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:text-white"
+              placeholder="Enter Gemini API Key"
+            />
+          </div>
+        </div>
+
+        <!-- Grok -->
+        <div class="w-full flex gap-4">
+          <div class="mb-4 w-1/2">
+            <label
+              for="grokEndpoint"
+              class="block text-sm font-medium text-gray-700 dark:text-white"
+              >Grok Endpoint</label
+            >
+            <input
+              type="text"
+              id="grokEndpoint"
+              class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:text-white"
+              placeholder="Enter Grok Endpoint"
+            />
+          </div>
+
+          <div class="mb-4 w-1/2">
+            <label
+              for="grokKey"
+              class="block text-sm font-medium text-gray-700 dark:text-white"
+              >Grok API Key</label
+            >
+
+            <input
+              type="password"
+              id="grokKey"
+              class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:text-white"
+              placeholder="Enter Grok API Key"
+            />
+          </div>
+        </div>
+
+        <!-- Selection Tool Dropdown -->
+        <div class="w-full flex gap-4">
+          <div class="mb-4 w-1/2">
+            <label
+              for="toggle"
+              class="block text-sm font-medium text-gray-700 dark:text-white"
+              >Select AI</label
+            >
+            <select
+              id="toggle"
+              class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:text-white"
+            >
+              <option value="gpt">GPT</option>
+              <option value="gemini">Gemini</option>
+              <option value="grok">Grok</option>
+              <option value="deepseek-r1:1.5b">deepseek-r1:1.5b</option>
+              <option value="deepseek-r1:7b">deepseek-r1:7b</option>
+              <option value="deepseek-coder:1.3b">deepseek-coder:1.3b</option>
+            </select>
+          </div>
+
+          <div class="my-4 w-1/2 flex">
+            <button
+              id="saveButton"
+              type="button"
+              class="text-gray-900 w-full bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:ring-4 focus:outline-none focus:ring-lime-200 font-semibold rounded-lg text-lg px-5 py-2.5 text-center me-2 mb-2"
+            >
+              Save Configuration
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <figcaption
+        class="flex items-center justify-center mt-6 space-x-3 rtl:space-x-reverse"
+      >
+        <cite class="ps-3 text-sm text-gray-500"
+          >Build with :heart: by Hasan</cite
+        >
+      </figcaption>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
