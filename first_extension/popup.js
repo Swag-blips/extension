@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
       colorPicker.value = data.backgroundColor;
       displaySavedColor.textContent = data.backgroundColor;
     }
-    
   });
 
   saveColorButton.addEventListener("click", () => {
