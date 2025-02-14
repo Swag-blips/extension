@@ -28,7 +28,6 @@ document.getElementById("saveButton").addEventListener("click", () => {
     !grokEndpoint
   ) {
     alert("Please fill in all fields.");
-    
     return;
   }
 
